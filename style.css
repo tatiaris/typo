@@ -1,0 +1,113 @@
+:root {
+    --primary-color-light: #1ba5d3;
+    --color-light: white;
+    --color-dark: black;
+    --color-right: lime;
+    --color-wrong: red;
+}
+
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hide;
+    color: white;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    display: block;
+    overflow: scroll;
+}
+.full-width-container {
+    width: 100%;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.passage-container {
+    padding: 2%;
+    width: 60%;
+    height: 30%;
+    border-radius: 10px;
+    border: 1px groove lime;
+    overflow: scroll;
+    margin: 2%;
+    word-wrap: break-word;
+}
+.pchar {
+    color: white;
+    font-size: 1.5em;
+}
+.pchar-right {
+    color: lime;
+    font-size: 1.5em;
+}
+.pchar-wrong {
+    background-color: red;
+    font-size: 1.5em;
+}
+input {
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+    border: 0px;
+    border-left: 1px groove magenta;
+    border-right: 1px groove magenta;
+    background: black;
+    border-radius: 10px;
+    padding-left: 2%;
+    color: yellow;
+}
+input:focus {
+    outline: none;
+}
+.input-container {
+    width: 60%;
+    border: lime;
+    background-color: transparent;
+    height: 50%;
+}
+.all-stats-container {
+    display: block;
+    text-align: center;
+    margin: 1.5%;
+    width: 40%;
+}
+.title-container {
+    padding: 2%;
+}
+.title {
+    font-size: 1.5em;
+}
+.stat-container {
+    width: 100%;
+    padding: 1.5%;
+}
+.stat-type {
+    width: 50%;
+    text-align: right;
+    margin-right: 5%;
+    padding: 2%;
+    border-right: 1px groove lime;
+}
+.stat-data {
+    width: 50%;
+    text-align: left;
+    margin-left: 5%;
+}
+.chart-container {
+    width: 40%;
+    margin: 2%;
+}
