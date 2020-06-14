@@ -279,7 +279,6 @@ function add_missed_char(c) {
 		char_mistakes.push(c);
 		char_mistakes_amts.push(1);
 	}
-	sort_mistakes();
 	update_missed_char_chart(c);
 }
 
