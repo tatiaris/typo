@@ -26,7 +26,8 @@ body {
     align-items: center;
     margin: 0px;
     display: block;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .full-width-container {
     width: 100%;
