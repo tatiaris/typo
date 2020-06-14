@@ -39,10 +39,9 @@ body {
 .passage-container {
     padding: 2%;
     width: 60%;
-    height: 30%;
+    height: auto;
     border-radius: 10px;
     border: 1px groove lime;
-    overflow: scroll;
     margin: 2%;
     word-wrap: break-word;
 }

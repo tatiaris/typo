@@ -272,10 +272,6 @@ function check_input() {
 	}
 }
 
-function sort_mistakes() {
-
-}
-
 function add_missed_char(c) {
 	if (char_mistakes.includes(c)){
 		char_mistakes_amts[char_mistakes.indexOf(c)] += 1;
@@ -316,6 +312,8 @@ function finish_passage() {
 	start = false;
 	aTimer.stop();
 	clearInterval(stat_updater);
+
+	document.getElementsByTagName('body')[0].click();
 }
 
 function update_cookies(wpm, acc) {
