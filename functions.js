@@ -195,23 +195,15 @@ function get_new_passage() {
 	accuracy = 0;
 	mistakes = 0;
 	not_mistakes = 0;
-	clock = 0;
-
-    var data = new FormData();
-    data.append('func', "get_passage");
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.open('POST', './helper.php', true);
-    xhttp.onload = function () {
-		passage = this.responseText;
-		chars = passage.split("");
-		words = passage.split(" ");
-		last_word = words[words.length - 1];
-		fill_passage();
-		start_timer();
-		stat_updater = setInterval(update_stats, 500);
-    };
-    xhttp.send(data);
+    clock = 0;
+    
+    passage = "this project is no longer supported.";
+    chars = passage.split("");
+    words = passage.split(" ");
+    last_word = words[words.length - 1];
+    fill_passage();
+    start_timer();
+    stat_updater = setInterval(update_stats, 500);
 }
 
 function fill_passage() {
@@ -283,7 +275,6 @@ function add_missed_char(c) {
 }
 
 function update_missed_char_chart(c){
-	console.log("updating missed char chart");
 	present_chars = m_config.data.labels;
 	if (!present_chars.includes(c)) {
 		m_config.data.labels.push(c);
@@ -307,27 +298,25 @@ function finish_passage() {
 	e = document.getElementById("inp");
 	e.value = "";
 	e.placeholder = "press \'enter\' to restart";
-	e.disabled = true;
+    // e.disabled = true;
 	start = false;
 	aTimer.stop();
 	clearInterval(stat_updater);
-
-	document.getElementsByTagName('body')[0].click();
 }
 
 function update_cookies(wpm, acc) {
 	wpm_cookie = get_cookie("wpm_list");
 	if (wpm_cookie.length == 0) {
-		document.cookie = "wpm_list=" + wpm + ";";
+		document.cookie = "wpm_list=" + wpm + "; SameSite=None; Secure";
 	} else {
-		document.cookie = "wpm_list=" + wpm_cookie + "," + wpm + ";";
+		document.cookie = "wpm_list=" + wpm_cookie + "," + wpm + "; SameSite=None; Secure";
 	}
 
 	acc_cookie = get_cookie("acc_list");
 	if (acc_cookie.length == 0) {
-		document.cookie = "acc_list=" + acc + ";";
+		document.cookie = "acc_list=" + acc + "; SameSite=None; Secure";
 	} else {
-		document.cookie = "acc_list=" + acc_cookie + "," + acc + ";";
+		document.cookie = "acc_list=" + acc_cookie + "," + acc + "; SameSite=None; Secure";
 	}
 
 	mistakes_cookie = "";
@@ -335,7 +324,7 @@ function update_cookies(wpm, acc) {
 		if (i == 0)	mistakes_cookie += char_mistakes[i] + ":" + char_mistakes_amts[i];
 		else mistakes_cookie += "," + char_mistakes[i] + ":" + char_mistakes_amts[i];
 	}
-	document.cookie = "char_mistakes=" + mistakes_cookie + ";";
+	document.cookie = "char_mistakes=" + mistakes_cookie + "; SameSite=None; Secure";
 }
 
 function update_overall_stats() {
